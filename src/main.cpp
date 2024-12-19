@@ -1,5 +1,5 @@
 #include "config.h"
-
+//I am following along with GetIntoGameDev, never touched openGL before
 int main(void)
 {
     GLFWwindow* window;
@@ -11,6 +11,12 @@ int main(void)
     }
 
     window = glfwCreateWindow(640, 480, "Hello, Window!", NULL, NULL);
+    glfwMakeContextCurrent(window);
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        glfwTerminate();
+        return -1;
+    }
     glClearColor(0.25f, 0.5f, 0.75f, 1.0f);
 
     while (!glfwWindowShouldClose(window))
