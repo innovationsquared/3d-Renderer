@@ -2,6 +2,13 @@
 //I am following along with GetIntoGameDev, never touched openGL before
 int main(void)
 {
+    std::string line;
+    std::ifstream file("../../src/shaders/vertex.txt");
+    while (std::getline(file, line))
+    {
+        std::cout << line << std::endl;
+    }
+    file.close();
     GLFWwindow* window;
 
     if (!glfwInit())
