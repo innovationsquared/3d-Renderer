@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/hello_window.dir/src/main.cpp.o -o hello_window  /usr/lib64/libglfw.so.3.3 /usr/lib64/libGL.so
