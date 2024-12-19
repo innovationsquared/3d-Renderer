@@ -5,9 +5,9 @@ Welcome! I am following along with a great youtuber until I am able to take the 
 ## Installation
 
 ### Prerequisites
-    -   **C++ Compiler**
-    -   **CMake**
-    -   **OpenGL compatible GPU**
+- **C++ Compiler**
+- **CMake**
+- **OpenGL compatible GPU**
 
 ### Steps
 
