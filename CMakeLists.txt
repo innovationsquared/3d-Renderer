@@ -3,10 +3,11 @@ project(hello_window VERSION 1.0.0)
 
 set(SOURCES
     src/config.h
+    src/config.cpp
     src/main.cpp
     src/glad.c
-    src/triangle_mesh.h
-    src/triangle_mesh.cpp)
+    src/triangle_mesh.cpp
+    src/material.cpp)
 
 include_directories(dependencies)
 add_executable(hello_window ${SOURCES})

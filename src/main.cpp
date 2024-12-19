@@ -1,5 +1,6 @@
 #include "config.h"
 #include "triangle_mesh.h"
+#include "material.h"
 //I am following along with GetIntoGameDev, never touched openGL before.
 //Using training wheels, then am gonna make my own program!!
 unsigned int make_shader(const std::string& vertex_filepath, const std::string& fragment_filepath);
@@ -26,6 +27,7 @@ int main(void)
     glViewport(0,0,w,h);
     //lets put a triangle on this hoe
     TriangleMesh* triangle = new TriangleMesh();
+    Material* material = new Material("../img/linus.jpg");
     unsigned int shader = make_shader(
         "../src/shaders/vertex.txt",
         "../src/shaders/fragment.txt"
@@ -36,10 +38,12 @@ int main(void)
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shader);
+        material->use();
         triangle->draw();
         glfwSwapBuffers(window);
     }
     glDeleteProgram(shader);
+    delete triangle;
     glfwTerminate();
     return 0;
 }
