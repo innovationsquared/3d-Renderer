@@ -1,3 +1,0 @@
-/home/calvin/Documents/Programming/C++_Engine/bin/CMakeFiles/hello_window.dir
-/home/calvin/Documents/Programming/C++_Engine/bin/CMakeFiles/edit_cache.dir
-/home/calvin/Documents/Programming/C++_Engine/bin/CMakeFiles/rebuild_cache.dir

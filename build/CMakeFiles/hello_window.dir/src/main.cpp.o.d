@@ -140,4 +140,9 @@ CMakeFiles/hello_window.dir/src/main.cpp.o: \
  /usr/include/c++/14/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/14/x86_64-redhat-linux/bits/c++io.h \
  /usr/include/c++/14/bits/fstream.tcc /usr/include/c++/14/sstream \
- /usr/include/c++/14/bits/sstream.tcc
+ /usr/include/c++/14/bits/sstream.tcc /usr/include/c++/14/vector \
+ /usr/include/c++/14/bits/stl_uninitialized.h \
+ /usr/include/c++/14/bits/stl_vector.h \
+ /usr/include/c++/14/bits/stl_bvector.h \
+ /usr/include/c++/14/bits/vector.tcc \
+ /home/calvin/Documents/Programming/C++_Engine/src/triangle_mesh.h
