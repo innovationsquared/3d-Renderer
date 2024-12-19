@@ -21,6 +21,9 @@ int main(void)
     }
 
     glClearColor(0.25f, 0.5f, 0.75f, 1.0f);
+    int w,h;
+    glfwGetFramebufferSize(window, &w, &h);
+    glViewport(0,0,w,h);
     //lets put a triangle on this hoe
     TriangleMesh* triangle = new TriangleMesh();
     unsigned int shader = make_shader(

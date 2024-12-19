@@ -8,4 +8,5 @@ void draw();
 
 private:
 unsigned int VBO, VAO, vertex_count;
+std::vector<unsigned int> VBOs;
 };

@@ -1,28 +1,45 @@
-//This is starter code from the video.
+//This is starter code from the video with notes from me.
 #include "triangle_mesh.h"
 
 TriangleMesh::TriangleMesh() {
     
-    std::vector<float> data = {
-        -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
-         0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,
-         0.0f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f
-    };
-    vertex_count = 3;
+    std::vector<float> positions = {
+      // All range from -1 (Left side of screen) to 1 (R side)
+      //  X      Y     Z  
+        -1.0f, -1.0f, 0.0f,
+         1.0f, -1.0f, 0.0f,
+        -1.0f,  1.0f, 0.0f,
 
+        -1.0f,  1.0f, 0.0f,
+         1.0f, -1.0f, 0.0f,
+         1.0f,  1.0f, 0.0f,
+    };
+    std::vector<int> colorIndices = {
+        0, 1, 2, 2, 1, 3
+    };
+    vertex_count = 6;
+    //VBO = vertex buffer object
+    //VAO = vertex array object
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), data.data(), GL_STATIC_DRAW);
+    VBOs.resize(2);
+
+
+    glGenBuffers(2, VBOs.data());
 
     //position
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 24, (void*)0);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
+    glBufferData(GL_ARRAY_BUFFER, positions.size() * sizeof(float),
+                 positions.data(), GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 12, (void*)0);
     glEnableVertexAttribArray(0);
 
-    //color
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 24, (void*)12);
+    //color indices
+    glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+        glBufferData(GL_ARRAY_BUFFER, colorIndices.size() * sizeof(float),
+                    colorIndices.data(), GL_STATIC_DRAW);
+    glVertexAttribIPointer(1, 1, GL_INT, 4, (void*)0);
     glEnableVertexAttribArray(1);
 
 }
@@ -34,5 +51,5 @@ void TriangleMesh::draw() {
 
 TriangleMesh::~TriangleMesh() {
     glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(2, VBOs.data());
 }
