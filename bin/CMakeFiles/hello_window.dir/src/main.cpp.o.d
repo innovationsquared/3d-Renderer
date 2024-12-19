@@ -129,8 +129,10 @@ CMakeFiles/hello_window.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/locale_facets.tcc \
  /usr/include/c++/14/bits/basic_ios.tcc \
  /usr/include/c++/14/bits/ostream.tcc /usr/include/c++/14/istream \
- /usr/include/c++/14/bits/istream.tcc /usr/include/GLFW/glfw3.h \
+ /usr/include/c++/14/bits/istream.tcc \
+ /home/calvin/Documents/Programming/C++_Engine/dependencies/glad/glad.h \
+ /home/calvin/Documents/Programming/C++_Engine/dependencies/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-redhat-linux/14/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h
+ /usr/include/bits/stdint-least.h \
+ /home/calvin/Documents/Programming/C++_Engine/dependencies/GLFW/glfw3.h

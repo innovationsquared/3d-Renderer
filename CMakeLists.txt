@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
 project(hello_window VERSION 1.0.0)
 
-add_executable(hello_window src/config.h src/main.cpp)
+set(SOURCES
+    src/config.h
+    src/main.cpp
+    src/glad.c)
+include_directories(dependencies)
+add_executable(hello_window ${SOURCES})
 
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
