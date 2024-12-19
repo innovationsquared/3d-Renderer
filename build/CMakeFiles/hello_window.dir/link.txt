@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/hello_window.dir/src/main.cpp.o CMakeFiles/hello_window.dir/src/glad.c.o CMakeFiles/hello_window.dir/src/triangle_mesh.cpp.o -o hello_window  /usr/lib64/libglfw.so.3.3 /usr/lib64/libGL.so
