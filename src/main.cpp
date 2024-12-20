@@ -1,6 +1,7 @@
 #include "config.h"
 #include "triangle_mesh.h"
 #include "material.h"
+#include "linear_algebra.h"
 //I am following along with GetIntoGameDev, never touched openGL before.
 //Using training wheels, then am gonna make my own program!!
 unsigned int make_shader(const std::string& vertex_filepath, const std::string& fragment_filepath);
@@ -39,11 +40,18 @@ int main(void)
     glUseProgram(shader);
     glUniform1i(glGetUniformLocation(shader, "material"), 0);
     glUniform1i(glGetUniformLocation(shader, "mask"), 1);
+                        // a      b      c  
+    vec3 quad_position = {-0.1f, 0.2f, 0.0f};
+    //mat4 model = create_matrix_transform(quad_position);
+    unsigned int model_location = glGetUniformLocation(shader, "model");
+
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
+        mat4 model = create_model_transform(quad_position, 10 * glfwGetTime());
+        glUniformMatrix4fv(model_location, 1, GL_FALSE, model.entries);
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shader);
         material->use(0);
