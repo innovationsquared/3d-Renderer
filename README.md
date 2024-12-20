@@ -1,4 +1,6 @@
 # InnovationAccelerated
+[![Workflow Status](https://github.com/innovationsquared/InnovationAccelerated/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/innovationsquared/InnovationAccelerated/actions/workflows/cmake-single-platform.yml)
+
 ## About
 Welcome! I am following along with a great youtuber until I am able to take the training wheels off. This will grow & develop over time into something physics based.
 
