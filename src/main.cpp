@@ -40,10 +40,16 @@ int main(void)
     glUseProgram(shader);
     glUniform1i(glGetUniformLocation(shader, "material"), 0);
     glUniform1i(glGetUniformLocation(shader, "mask"), 1);
-                        // a      b      c  
-    vec3 quad_position = {-0.1f, 0.2f, 0.0f};
+                        // a      b      c   - is left and down
+    vec3 quad_position = {-0.2f, 0.4f, 0.0f};
+    vec3 camera_pos = {-0.4f, 0.0f, 0.2f};
+    vec3 camera_target = {0.0f, 0.0f, 0.0f};
     //mat4 model = create_matrix_transform(quad_position);
     unsigned int model_location = glGetUniformLocation(shader, "model");
+    unsigned int view_location = glGetUniformLocation(shader, "view");
+
+    mat4 view = create_look_at(camera_pos, camera_target);
+    glUniformMatrix4fv(view_location, 1, GL_FALSE, view.entries);
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
