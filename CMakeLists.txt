@@ -7,8 +7,7 @@ set(SOURCES
     src/main.cpp
     src/glad.c
     src/triangle_mesh.cpp
-    src/material.cpp
-    src/linear_algebra.cpp)
+    src/material.cpp)
 
 include_directories(dependencies)
 add_executable(hello_window ${SOURCES})

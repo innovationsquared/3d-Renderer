@@ -157,3 +157,25 @@ vec3 cross(vec3 u, vec3 v)
     w.entries[2] = u.entries[0] * v.entries[1] - u.entries[1] * v.entries[0];
     return w;    
 }
+
+mat4 create_perspective_projection(float FOVy, float aspect, float near, float far)
+{
+    FOVy = FOVy * PI / 360.0f; //half of FOV
+    float tan = tanf(FOVy);
+    float n = -near;
+    float f = -far;
+
+    mat4 matrix;
+    for (int i = 0; i < 16; i++)
+    {
+        matrix.entries[i] = 0.0f;
+    }
+
+    matrix.entries[0] = 1.0f / (aspect * tan);
+    matrix.entries[5] = 1.0f / tan;
+    matrix.entries[10] = -(n + f) / (n - f);
+    matrix.entries[11] = -1.0f;
+    matrix.entries[14] = 2 * n * f / (n - f);
+
+    return matrix;
+}
